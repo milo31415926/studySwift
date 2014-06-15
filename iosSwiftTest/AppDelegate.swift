@@ -8,17 +8,25 @@
 
 import UIKit
 
+
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
-
+    var mainView: SwiftTestMainViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+        let rootViewController=SwiftTestMainViewController(nibName:"SwiftTestMainViewController", bundle:nil)
+
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         // Override point for customization after application launch.
         self.window!.backgroundColor = UIColor.whiteColor()
+       self.window!.rootViewController=rootViewController;
         self.window!.makeKeyAndVisible()
+     
+        //self.window?.addSubview(self.mainView?.view);
+        
         return true
     }
 
